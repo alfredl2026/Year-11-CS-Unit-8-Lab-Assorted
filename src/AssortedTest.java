@@ -38,6 +38,7 @@ class AssortedTest {
 
     @org.junit.jupiter.api.Test
     void main() {
+        toBinary();
     }
 
     @org.junit.jupiter.api.Test
@@ -135,7 +136,7 @@ class AssortedTest {
 
         for (int i = 0; i < list.size(); i ++) {
 
-            if (i%2 == 0) {
+            if (list.get(i)%2 == 0) {
                 assertTrue(list.get(i) == listSortedOdd.get(i));
             }
         }
@@ -192,15 +193,12 @@ class AssortedTest {
         assertTrue(result3.get(result3.size()-3) == 32);
 
     }
-
     @org.junit.jupiter.api.Test
     void wildWest() {
-
         List<String> list = new ArrayList(Arrays.asList("NORTH", "SOUTH", "EAST", "WEST"));
         List<String> list2 = new ArrayList(Arrays.asList("NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"));
         List<String> list3 = new ArrayList(Arrays.asList("NORTH", "NORTH", "EAST", "EAST", "NORTH", "WEST", "SOUTH", "WEST", "WEST"));
         List<String> list4 = new ArrayList(Arrays.asList("NORTH", "NORTH", "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"));
-
         List<String> result = Assorted.wildWest(list);
         List<String> result2 = Assorted.wildWest(list2);
         List<String> result3 = Assorted.wildWest(list3);
